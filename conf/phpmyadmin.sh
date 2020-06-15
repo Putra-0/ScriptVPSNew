@@ -12,10 +12,9 @@ apt-key add jcameron-key.asc
 apt update
 apt -y install webmin
 systemctl start webmin
-systemctl enable webmin
-systemctl status webmin
+/lib/systemd/systemd-sysv-install enable webmin
 apt -y install mysql-server
 apt -y install phpmyadmin
-echo "" | sudo tee -a /etc/apache2/apache2.conf
-echo "Include /etc/phpmyadmin/apache.conf" | sudo tee -a /etc/apache2/apache2.conf
+echo "" | tee -a /etc/apache2/apache2.conf
+echo "Include /etc/phpmyadmin/apache.conf" | tee -a /etc/apache2/apache2.conf
 systemctl restart apache2
