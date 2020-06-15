@@ -1,0 +1,4 @@
+CREATE USER 'ocs'@'localhost' IDENTIFIED BY 'ocs';
+GRANT ALL PRIVILEGES ON * . * TO 'ocs'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
