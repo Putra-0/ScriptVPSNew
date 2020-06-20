@@ -15,6 +15,9 @@ systemctl start webmin
 /lib/systemd/systemd-sysv-install enable webmin
 apt -y install mysql-server
 apt -y install phpmyadmin
+ss -ntlp 'sport = 80'
+kill pid tersebut
 echo "" | tee -a /etc/apache2/apache2.conf
 echo "Include /etc/phpmyadmin/apache.conf" | tee -a /etc/apache2/apache2.conf
 systemctl restart apache2
+
