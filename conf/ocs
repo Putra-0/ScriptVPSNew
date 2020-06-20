@@ -9,3 +9,7 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 
 a2enmod rewrite
 
+cd /etc/apache2
+rm apache2.conf
+wget https://raw.githubusercontent.com/kruleshvpn/ScriptVPSNew/master/conf/apache2.conf
+service apache2 restart
