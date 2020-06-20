@@ -1,0 +1,11 @@
+cd /var/www/html
+wget https://github.com/kruleshvpn/ScriptVPSNew/raw/master/conf/OCS2.zip
+unzip OCS2.zip
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+a2enmod rewrite
+
