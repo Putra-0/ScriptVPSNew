@@ -13,8 +13,13 @@ echo "[+]             Script By             [+]"
 echo "[+]          Khairul KAFAShop         [+]"
 echo "[+]                                   [+]"
 echo "   ===================================   "
+sleep 3
+clear
 
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+
+sleep 3
+clear
 
 cd /etc/
 
@@ -28,6 +33,9 @@ cat <<EOF > filebrowser.json
 "root": "/home"
 }
 EOF
+
+sleep 3
+clear
 
 cd /etc/systemd/system/
 
@@ -45,10 +53,16 @@ ExecStart=/usr/local/bin/filebrowser -c /etc/filebrowser.json
 WantedBy=multi-user.target
 EOF
 
+sleep 3
+clear
+
 cd
 
 systemctl enable filebrowser.service
 systemctl start filebrowser.service
+
+sleep 3
+clear
 
 #Finalizing Installation
 echo "   ===================================   "
@@ -64,3 +78,6 @@ echo ""
 echo "http://$ip:8080"
 echo ""
 echo "Default Username / Password is admin"
+echo ""
+echo ""
+sleep 5
